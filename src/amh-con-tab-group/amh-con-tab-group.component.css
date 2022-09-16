@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.amh-con-tab-wrapper button:not(:first-child) {
+  margin-left: 10px;
+}

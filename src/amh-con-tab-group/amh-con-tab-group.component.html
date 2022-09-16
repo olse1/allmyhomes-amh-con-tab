@@ -1,0 +1,8 @@
+<div class="amh-con-tab-wrapper">
+  <button *ngFor="let label of labels; let i = index" (click)="activateTab(i)">
+    {{ label }}
+  </button>
+</div>
+<ng-content></ng-content>
+
+<div #tabContent class="amh-con-tab-content"></div>
