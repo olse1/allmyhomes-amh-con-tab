@@ -15,15 +15,11 @@ export class AppComponent {
         '------------------------------- switch to separateFirstTab',
         !this.separateFirstTab
       );
-      this.separateFirstTab = !this.separateFirstTab;
+      // this.separateFirstTab = !this.separateFirstTab;
     });
+  }
 
-    timer(2000).subscribe(() => {
-      console.log(
-        '------------------------------- switch to separateFirstTab',
-        !this.separateFirstTab
-      );
-      this.separateFirstTab = !this.separateFirstTab;
-    });
+  switchView() {
+    this.separateFirstTab = !this.separateFirstTab;
   }
 }

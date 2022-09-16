@@ -1,8 +1,18 @@
 <div class="amh-con-tab-wrapper">
-  <button *ngFor="let label of labels; let i = index" (click)="activateTab(i)">
+  <button
+    *ngFor="let label of labels; let i = index"
+    (click)="activateTab(i)"
+    [class.active]="i === activeIndex"
+  >
     {{ label }}
   </button>
 </div>
+
 <ng-content></ng-content>
 
-<div #tabContent class="amh-con-tab-content"></div>
+<div
+  (cdkObserveContent)="onContentChange($event)"
+  class="amh-con-tab-content-wrapper"
+>
+  <div #tabContent class="amh-con-tab amh-con-tab-content"></div>
+</div>

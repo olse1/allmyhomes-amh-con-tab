@@ -6,3 +6,20 @@
 .amh-con-tab-wrapper button:not(:first-child) {
   margin-left: 10px;
 }
+
+.amh-con-tab-wrapper button.active {
+  color: blue;
+}
+
+.amh-con-tab-content-wrapper {
+  display: flex;
+  margin-top: 10px;
+}
+
+.amh-con-tab {
+  border: 1px solid #ccc;
+}
+
+.amh-con-tab:not(:first-child) {
+  margin-left: 10px;
+}
