@@ -2,7 +2,6 @@ import {
   AfterContentInit,
   Component,
   ContentChildren,
-  ElementRef,
   QueryList,
 } from '@angular/core';
 import { AmhConTabComponent } from '../amh-con-tab/amh-con-tab.component';
@@ -18,15 +17,23 @@ export class AmhConTabGroupComponent implements AfterContentInit {
   tabs: QueryList<AmhConTabComponent>;
 
   ngAfterContentInit() {
+    this.checkActiveTabs();
+
+    this.tabs.changes.subscribe((tab) => this.checkActiveTabs());
+  }
+
+  selectTab(tab: AmhConTabComponent) {
+    setTimeout(() => {
+      this.tabs.toArray().forEach((tab) => (tab.active = false));
+      tab.active = true;
+    }, 0);
+  }
+
+  private checkActiveTabs() {
     const activeTabs = this.tabs.filter((tab) => tab.active);
 
     if (activeTabs.length === 0) {
       this.selectTab(this.tabs.first);
     }
-  }
-
-  selectTab(tab: AmhConTabComponent) {
-    this.tabs.toArray().forEach((tab) => (tab.active = false));
-    tab.active = true;
   }
 }

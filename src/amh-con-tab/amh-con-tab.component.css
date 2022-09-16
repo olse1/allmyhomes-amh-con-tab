@@ -1,7 +1,3 @@
-:host {
-  display: none;
-}
-
 :host.active {
   display: block;
 }

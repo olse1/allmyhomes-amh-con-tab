@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, DoCheck, Input } from '@angular/core';
 
 @Component({
   selector: 'app-amh-con-tab',
@@ -7,5 +7,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 })
 export class AmhConTabComponent {
   @Input() label: string;
-  @HostBinding('class.active') active: boolean;
+  @Input() active: boolean;
+
+
 }
