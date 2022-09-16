@@ -2,6 +2,7 @@ import {
   AfterContentInit,
   Component,
   ContentChildren,
+  ElementRef,
   QueryList,
 } from '@angular/core';
 import { AmhConTabComponent } from '../amh-con-tab/amh-con-tab.component';
