@@ -15,13 +15,16 @@ export class AmhConTabGroupComponent implements AfterViewInit {
   constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
-    // this.initTabs();
+    this.initTabs();
     this.activateTab(0);
   }
 
   onContentChange(changes: MutationRecord[]) {
+    console.log('onContentChange');
+    //console.log(changes);
     // logs everything that changed
-    // changes.forEach((change) => console.log(change.target));
+    changes.forEach((change) => console.log('added', change.addedNodes));
+    changes.forEach((change) => console.log('removed', change.removedNodes));
     // this.initTabs();
   }
 
