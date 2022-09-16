@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-amh-con-tab',
   templateUrl: './amh-con-tab.component.html',
   styleUrls: ['./amh-con-tab.component.css'],
 })
-export class AmhConTabComponent {}
+export class AmhConTabComponent {
+  @Input() label: string;
+  @Input() active: boolean;
+}
