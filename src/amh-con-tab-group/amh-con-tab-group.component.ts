@@ -61,8 +61,7 @@ export class AmhConTabGroupComponent implements OnInit {
           }
         }
 
-        if (this.pSeparateFirstTab && index === 1) {
-        } else {
+        if (!(this.pSeparateFirstTab && index === 1)) {
           this.addTab(label, node);
         }
       }
